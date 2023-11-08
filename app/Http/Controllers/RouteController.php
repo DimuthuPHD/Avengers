@@ -39,7 +39,7 @@ class RouteController extends Controller
     {
         $data = $request->validated();
         $data['code'] = 'R'.date('ymdhist');
-        $this->routeRepository->create($data);
+        $this->routeRepository->store($data);
 
         return redirect()->route('route.index')->withFlashSuccess('Route Created Successfully');
 

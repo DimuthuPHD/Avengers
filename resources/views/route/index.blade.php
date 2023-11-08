@@ -17,6 +17,9 @@
                             <p class="mt-1 text-sm text-gray-600">
                                 {{ __("All route details are goes here") }}
                             </p>
+                            <x-action-button style="float: right" :url="route('route.create')" class="bg-gray-800 float-right">Create New</x-action-button>
+                            <br>
+                            <br>
                             <br>
                         </header>
 

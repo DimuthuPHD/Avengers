@@ -22,7 +22,7 @@ class StoreRouteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|max:200',
+            'name' => 'required|max:200|unique:routes,name',
             'from' => 'required|max:200',
             'to' => 'required|max:200',
             'status' => 'required|boolean',
