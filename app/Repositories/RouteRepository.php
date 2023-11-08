@@ -62,4 +62,9 @@ class RouteRepository extends BaseRepository
 
     }
 
+    public function getActives()
+    {
+       return  $this->model->active()->get();
+    }
+
 }

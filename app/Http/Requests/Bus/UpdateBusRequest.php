@@ -22,10 +22,12 @@ class UpdateBusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'owner_name' => 'required|max:100',
-            'owner_phone' => 'required|numeric|min:10',
-            'owner_address' => 'required|max:300',
-            'number_plate' => 'required',
+            'route_id' => 'required|exists:routes,id',
+            'bus_id' => 'required|exists:buses,id',
+            'departure_at' => 'required|date_format:H:i',
+            'arrive_at' => 'required|date_format:H:i',
+            'notes' => 'required',
+            'status' => 'required',
             'notes' => 'sometimes',
             'status' => 'required|boolean',
         ];
