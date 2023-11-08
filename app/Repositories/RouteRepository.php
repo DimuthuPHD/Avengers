@@ -16,7 +16,7 @@ class RouteRepository extends BaseRepository
         $this->model = $model;
     }
 
-    public function create(array $data): Route
+    public function store(array $data): Route
     {
 
         DB::beginTransaction();
