@@ -26,6 +26,8 @@ interface BaseRepositoryInterface {
 
 	public function orderBy($column, $value);
 
+    public function paginate($limit = 25, array $columns = ['*'], $pageName = 'page', $page = null);
+
 	public function updateById($id, array $data);
 
 	public function where($column, $value, $operator = '=');
