@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRouteRequest;
 use App\Http\Requests\UpdateRouteRequest;
 use App\Models\Route;
+use App\Repositories\RouteRepository;
 
 class RouteController extends Controller
 {
+
+    protected $routeRepository;
+
+    public function __construct(RouteRepository $routeRepository)
+    {
+        $this->routeRepository = $routeRepository;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('route.index')->withRoutes($this->routeRepository->all());
     }
 
     /**
@@ -29,23 +37,21 @@ class RouteController extends Controller
      */
     public function store(StoreRouteRequest $request)
     {
-        dd($request->all());
+        $data = $request->validated();
+        $data['code'] = 'R'.date('ymdhist');
+        $this->routeRepository->create($data);
+
+        return redirect()->route('route.index')->withFlashSuccess('Route Created Successfully');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Route $route)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Route $route)
     {
-        //
+        return view('route.edit')->withRoute($route);
     }
 
     /**
@@ -53,7 +59,11 @@ class RouteController extends Controller
      */
     public function update(UpdateRouteRequest $request, Route $route)
     {
-        //
+        $data = $request->validated();
+        $this->routeRepository->update($route, $data);
+
+        return redirect()->route('route.index')->withFlashSuccess('Route Updated Successfully');
+
     }
 
     /**

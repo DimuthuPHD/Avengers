@@ -18,7 +18,6 @@
         autofocus autocomplete="to" />
     <x-input-error class="mt-2" :messages="$errors->get('to')" />
 </div>
-
 <div>
     <select name="status" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
         <option value="1" {{old('status', $model?->status) == 1 ? 'selected' : null}}>Active</option>
