@@ -58,4 +58,9 @@ class BusRepository extends BaseRepository
 
         return $bus;
     }
+
+    public function getActives()
+    {
+       return  $this->model->active()->get();
+    }
 }

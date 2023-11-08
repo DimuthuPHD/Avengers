@@ -27,11 +27,10 @@
             @endif
 
             <!-- Page Content -->
+            @include('layouts.alerts')
             <main>
                 {{ $slot }}
             </main>
-
-            @include('layouts.alerts')
 
         </div>
     </body>

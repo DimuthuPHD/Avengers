@@ -69,6 +69,11 @@ class BusController extends Controller
      */
     public function destroy(Bus $bus)
     {
+
+        if ($bus->shedules->count() > 0) {
+            return redirect()->back()->withFlashDanger('You are unable to delete this bus because there are existing schedule records associated with it.');
+        }
+
         $this->busRepository->deleteById($bus->id);
         return redirect()->route('buses.index')->withFlashSuccess('Bus Deleted Successfully');
     }
