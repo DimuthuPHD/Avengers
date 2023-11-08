@@ -21,7 +21,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        return view('route.index')->withRoutes($this->routeRepository->all());
+        return view('route.index')->withRoutes($this->routeRepository->paginate(10));
     }
 
     /**
@@ -71,6 +71,7 @@ class RouteController extends Controller
      */
     public function destroy(Route $route)
     {
-        //
+        $this->routeRepository->deleteById($route->id);
+        return redirect()->route('route.index')->withFlashSuccess('Route Deleted Successfully');
     }
 }

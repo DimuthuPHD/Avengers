@@ -257,6 +257,24 @@ abstract class BaseRepository implements BaseRepositoryInterface {
 		return $this;
 	}
 
+       /**
+     * @param  int  $limit
+     * @param  array  $columns
+     * @param  string  $pageName
+     * @param  null  $page
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function paginate($limit = 25, array $columns = ['*'], $pageName = 'page', $page = null)
+    {
+        $this->newQuery()->eagerLoad()->setClauses()->setScopes();
+
+        $models = $this->query->paginate($limit, $columns, $pageName, $page);
+
+        $this->unsetClauses();
+
+        return $models;
+    }
+
 
 	/**
 	 * Update the specified model record in the database
