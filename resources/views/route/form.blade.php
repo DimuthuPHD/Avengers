@@ -27,7 +27,8 @@
 </div>
 
 <div class="flex items-center gap-4">
-    <x-primary-button>{{ __('Save') }}</x-primary-button>
+    <x-primary-button>{{ __($model ? 'Update' : 'Save') }}</x-primary-button>
+    <x-action-button :url="route('route.index')" class="bg-red-600">{{ __('Cancel') }}</x-action-button>
 
     @if (session('status') === 'route-updated')
     <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
