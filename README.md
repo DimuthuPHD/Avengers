@@ -83,18 +83,22 @@ Before you begin, ensure you have the following installed:
     ```bash
     php artisan migrate
     ```
-7. Build Assets:
+7. Install npm:
+
+    ```bash
+    npm run install
+8. Build Assets:
 
     ```bash
     npm run build
     ```
-8. Seed the database:
+9. Seed the database:
 
     ```bash
     php artisan db:seed
     ```
 
-9. Start the development server:
+10. Start the development server:
 
     ```bash
     php artisan serve
