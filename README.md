@@ -86,7 +86,7 @@ Before you begin, ensure you have the following installed:
 7. Install npm:
 
     ```bash
-    npm run install
+    npm install
 8. Build Assets:
 
     ```bash
