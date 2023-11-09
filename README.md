@@ -44,7 +44,7 @@ Before you begin, ensure you have the following installed:
 - PHP >= 8
 - Composer >= 2.5.5
 - Node >= JS v20.3.1
-- MySQL Database
+- MySQL >= 8.0
 
 ### Installation
 
