@@ -41,9 +41,9 @@ Expressway Transport (Pvt) Ltd is a transport company handling the operations of
 
 Before you begin, ensure you have the following installed:
 
-- PHP
-- Composer
-- Laravel CLI
+- PHP >= 8
+- Composer >= 2.5.5
+- Node >= JS v20.3.1
 - MySQL Database
 
 ### Installation
@@ -51,13 +51,13 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/expressway-transport-laravel.git
+    git clone https://github.com/DimuthuPHD/Avengers.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd expressway-transport-laravel
+    cd Avengers
     ```
 
 3. Install dependencies:
@@ -83,13 +83,18 @@ Before you begin, ensure you have the following installed:
     ```bash
     php artisan migrate
     ```
-7. Seed the database:
+7. Build Assets:
+
+    ```bash
+    npm run build
+    ```
+8. Seed the database:
 
     ```bash
     php artisan db:seed
     ```
 
-8. Start the development server:
+9. Start the development server:
 
     ```bash
     php artisan serve
