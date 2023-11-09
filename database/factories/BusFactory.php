@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Route>
  */
-class RouteFactory extends Factory
+class BusFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +17,12 @@ class RouteFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->sentence(),
-            'code' => 'R-' . strtoupper(implode('-', fake()->unique()->words(2))),
-            'from' => fake()->city(),
-            'to' => fake()->city(),
+            'code' => 'B-' . strtoupper(implode('-', fake()->unique()->words(2))),
+            'owner_name' => fake()->name(),
+            'owner_phone' => fake()->phoneNumber(),
+            'owner_address' => fake()->address(),
+            'number_plate' => strtoupper(fake()->unique()->bothify('??? - ######')),
+            'notes' => fake()->sentence(),
             'status' => fake()->randomElement([1, 0]),
         ];
     }

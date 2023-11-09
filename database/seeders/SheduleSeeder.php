@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Route;
+use App\Models\Shedule;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 
-class RouteSeeder extends Seeder
+class SheduleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,8 @@ class RouteSeeder extends Seeder
     public function run(): void
     {
         Schema::disableForeignKeyConstraints();
-        Route::truncate();
-        Route::factory(100)->create();
+        Shedule::truncate();
+        Shedule::factory(200)->create();
         Schema::enableForeignKeyConstraints();
-
     }
 }

@@ -29,10 +29,10 @@
                         <br>
 
                         <form action="{{route('shedules.index')}}" method="get" id="filterForm">
-                            <div class="inline-block">
+                            <div class="inline-block w-2/5" style="width:30%">
                                 <x-input-label for="route_id" :value="__('Route')" />
                                 <select name="route_id" id="route_id"
-                                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">
                                     <option value="">Select</option>
                                     @foreach ($routes as $id => $name)
                                     <option value="{{$id}}" {{request('route_id')==$id ? 'selected' : null}}>{{$name}}

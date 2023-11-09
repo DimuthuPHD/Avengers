@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('owner_name');
-            $table->integer('owner_phone');
+            $table->string('owner_phone');
             $table->string('owner_address');
             $table->string('number_plate');
             $table->text('notes')->nullable()->default(null);

@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Bus;
+use App\Models\Route;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Route>
  */
-class RouteFactory extends Factory
+class SheduleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +19,11 @@ class RouteFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->sentence(),
-            'code' => 'R-' . strtoupper(implode('-', fake()->unique()->words(2))),
-            'from' => fake()->city(),
-            'to' => fake()->city(),
+            'route_id' => Route::inRandomOrder()->first(),
+            'bus_id' => Bus::inRandomOrder()->first(),
+            'departure_at' => fake()->time('H:i'),
+            'arrive_at' => fake()->time('H:i'),
+            'notes' => fake()->sentence(),
             'status' => fake()->randomElement([1, 0]),
         ];
     }
