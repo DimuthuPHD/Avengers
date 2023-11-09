@@ -110,21 +110,18 @@ For testing purposes, the system comes with predefined test users with different
 - **Username:** Super Admin
 - **Email:** admin@example.com
 - **Password:** secret
-- **Role:** Admin
 
 ### Editor
 
-- **Username:** Editor
+- **Username:** IT Admin
 - **Email:** editor@example.com
 - **Password:** secret
-- **Role:** Editor
 
 ### Manager
 
 - **Username:** Manager
 - **Email:** manager@example.com
 - **Password:** secret
-- **Role:** Manager
 
 ## Contributing
 
